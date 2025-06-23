@@ -1,7 +1,14 @@
-import NextAuth from 'next-auth';
-import { authConfig } from './auth.config';
+// Authentication disabled
+// import NextAuth from 'next-auth';
+// import { authConfig } from './auth.config';
  
-export default NextAuth(authConfig).auth;
+// Original authentication middleware (commented out)
+// export default NextAuth(authConfig).auth;
+
+// Empty middleware function that allows all requests
+export function middleware() {
+  return;
+}
  
 export const config = {
   // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher

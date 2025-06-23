@@ -6,6 +6,11 @@ export const authConfig = {
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
+      // Always return true to allow access to all routes without authentication
+      return true;
+      
+      // Original authentication logic (commented out):
+      /*
       const isLoggedIn = !!auth?.user;
       const isOnDashboard = nextUrl.pathname.startsWith("/dashboard");
       if (isOnDashboard) {
@@ -15,6 +20,7 @@ export const authConfig = {
         return Response.redirect(new URL("/dashboard", nextUrl));
       }
       return true;
+      */
     },
   },
   providers: [],
