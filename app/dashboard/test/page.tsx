@@ -3,7 +3,6 @@
 import { useEffect, useState, FormEvent, useRef, useCallback } from "react";
 import Script from "next/script";
 import ReactMarkdown from "react-markdown";
-import { useRouter } from "next/navigation";
 
 // Add TypeScript declarations for Puter
 declare global {
@@ -22,7 +21,6 @@ declare global {
 }
 
 const Page = () => {
-	const router = useRouter();
 	const [explanation, setExplanation] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [isStreaming, setIsStreaming] = useState<boolean>(false);

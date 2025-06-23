@@ -24,7 +24,6 @@ const FormSchema = z.object({
 });
  
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
-const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
 export type State = {
   errors?: {
@@ -101,8 +100,9 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
         WHERE id = ${id}
       `;
   } catch (error) {
-    // We'll log the error to the console for now
-    console.error(error);
+    return {
+      message: 'Database Error: Failed to Update Invoice.',
+    };
   }
  
   revalidatePath('/dashboard/invoices');
