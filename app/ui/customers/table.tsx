@@ -2,8 +2,7 @@ import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
 import {
-  CustomersTableType,
-  FormattedCustomersTable,
+  FormattedCustomersTable
 } from '@/app/lib/definitions';
 
 export default async function CustomersTable({
@@ -41,9 +40,7 @@ export default async function CustomersTable({
                             <p>{customer.name}</p>
                           </div>
                         </div>
-                        <p className="text-sm text-gray-500">
-                          {customer.email}
-                        </p>
+                        <p className="text-sm text-gray-500">{customer.email}</p>
                       </div>
                     </div>
                     <div className="flex w-full items-center justify-between border-b py-5">
@@ -75,10 +72,10 @@ export default async function CustomersTable({
                       Total Invoices
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
-                      Total Pending
+                      Pending
                     </th>
                     <th scope="col" className="px-4 py-5 font-medium">
-                      Total Paid
+                      Paid
                     </th>
                   </tr>
                 </thead>
